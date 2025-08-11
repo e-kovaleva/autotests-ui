@@ -21,10 +21,19 @@ class CreateCourseFormComponent(BaseComponent):
         )
 
     def fill(self, title: str, estimated_time: str, description: str, max_score: str, min_score: str):
+        expect(self.title_input).to_be_visible()
         self.title_input.fill(title)
+
+        expect(self.estimated_time_input).to_be_visible()
         self.estimated_time_input.fill(estimated_time)
+
+        expect(self.description_textarea).to_be_visible()
         self.description_textarea.fill(description)
+
+        expect(self.max_score_input).to_be_visible()
         self.max_score_input.fill(max_score)
+
+        expect(self.min_score_input).to_be_visible()
         self.min_score_input.fill(min_score)
 
     def check_visible(self, title: str, estimated_time: str, description: str, max_score: str, min_score: str):
