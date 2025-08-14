@@ -1,3 +1,4 @@
+import allure
 from playwright.sync_api import expect, Page
 from components.base_component import BaseComponent
 from components.courses.course_view_menu_component import CourseViewMenuComponent
@@ -19,14 +20,8 @@ class CourseViewComponent(BaseComponent):
             page, locator='course-estimated-time-info-row-view-text', name='Estimated time'
         )
 
-    def check_visible(
-            self,
-            index: int,
-            title: str,
-            max_score: str,
-            min_score: str,
-            estimated_time: str
-        ):
+    @allure.step('Check visible course view at index "{index}"')
+    def check_visible(self, index: int, title: str, max_score: str, min_score: str, estimated_time: str):
         self.image.check_visible(nth=index)
 
         self.title.check_visible(nth=index)
