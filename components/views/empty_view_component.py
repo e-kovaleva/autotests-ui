@@ -1,5 +1,5 @@
 import allure
-from playwright.sync_api import expect, Page
+from playwright.sync_api import Page
 from components.base_component import BaseComponent
 from elements.icon import Icon
 from elements.text import Text
