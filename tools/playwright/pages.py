@@ -3,6 +3,7 @@ from typing import Generator
 from playwright.sync_api import Page, Playwright
 from config import Browser, settings
 from pathlib import Path
+from tools.playwright.mocks import mock_static_resources
 
 
 def initialize_playwright_page(
@@ -14,6 +15,7 @@ def initialize_playwright_page(
     )
     context.tracing.start(screenshots=True, snapshots=True, sources=True)
     page = context.new_page()
+    mock_static_resources(page)
 
     yield page
 
