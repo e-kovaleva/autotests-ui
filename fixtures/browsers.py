@@ -9,7 +9,7 @@ from config import settings
 from tools.routes import AppRoute
 
 
-@pytest.fixture(params=settings.browsers)
+@pytest.fixture(params=settings.browsers )
 def page(request: SubRequest, playwright: Playwright) -> Generator[Page, None, None]:
     yield from initialize_playwright_page(
         playwright, 
